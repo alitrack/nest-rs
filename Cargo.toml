@@ -1,0 +1,21 @@
+[package]
+name = "cargo-nest"
+version = "0.1.0"
+edition = "2021"
+description = "Scaffold Rust DuckDB extensions for use as duckdb_nest plugins (templates + C-API footer stamping)"
+license = "MIT"
+keywords = ["duckdb", "extension", "scaffold", "nest"]
+categories = ["development-tools", "command-line-utilities"]
+readme = "README.md"
+
+[[bin]]
+name = "cargo-nest"
+path = "src/main.rs"
+
+[dependencies]
+# Intentionally dependency-free: std only, so `cargo install cargo-nest`
+# is fast and has a tiny, auditable surface.
+
+[profile.release]
+lto = true
+strip = true
